@@ -40,9 +40,9 @@ def f1(y_true, y_pred):
     f1_ = tf.compat.v1.where(tf.math.is_nan(f1_), tf.zeros_like(f1_), f1_)
     return f1_
 
-#def auc_roc(y_true, y_pred):
-#    # any tensorflow metric
-#    value, update_op = tf.contrib.metrics.streaming_auc(y_pred, y_true)
+def auc_roc(y_true, y_pred):
+    # any tensorflow metric
+    value, update_op = tf.contrib.metrics.streaming_auc(y_pred, y_true)
 #
 #    # find all variables created for this metric
 #    metric_vars = [i for i in tf.compat.v1.local_variables() if 'auc_roc' in i.name.split('/')[1]]
